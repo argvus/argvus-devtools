@@ -68,7 +68,7 @@ if [[ -n "${MAKEPKG_FLAGS:-}" ]]; then
   # shellcheck disable=SC2206
   flags=(${MAKEPKG_FLAGS})
 else
-	flags=(--noconfirm --needed --cleanbuild --force --check)
+	flags=(--nodeps --noconfirm --needed --cleanbuild --force --check)
 fi
 
 cd "$PKGBUILD_DIR"

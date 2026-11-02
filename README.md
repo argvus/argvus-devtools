@@ -29,9 +29,11 @@ make build
 ```
 
 `make build` writes the local source archive and build artifacts under
-`build/artifacts/`, and the package under `build/dist/`. `make install` installs
-the package and therefore requires administrator privileges; it is not needed
-to build or inspect it.
+`build/artifacts/`, and the package under `build/dist/`. The default build skips
+dependency checks, so runtime dependencies do not need to be installed to create
+the package; tools needed to build it must still be available. `make install`
+uses pacman to install the package and resolve its required dependencies from
+configured repositories, and therefore requires administrator privileges.
 
 See [DEVELOPMENT.md](DEVELOPMENT.md) and
 [packaging/archlinux/README.md](packaging/archlinux/README.md) for packaging
