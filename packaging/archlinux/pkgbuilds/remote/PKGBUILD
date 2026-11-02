@@ -1,0 +1,73 @@
+# Maintainer: William C. Canin
+pkgname=argvus-devtools
+pkgver=0.0.0
+pkgrel=1
+pkgdesc="Development tools and programming utilities for ARGVUS users"
+arch=('any')
+url="https://github.com/argvus/argvus-devtools"
+license=('GPL-3.0-only')
+depends=(
+	'code'
+	'neovim'
+	'git'
+	'less'
+	'tree'
+	'starship'
+	'zsh'
+	'ripgrep'
+	'fd'
+	'ruby'
+	'fzf'
+	'bat'
+	'eza'
+	'btop'
+	'jq'
+	'shadow'
+	'curl'
+	'wget'
+	'openssh'
+	'pam'
+	'util-linux'
+	'zip'
+	'gcc'
+	'gcc-libs'
+	'clang'
+	'gdb'
+	'lldb'
+	'cmake'
+	'ninja'
+	'meson'
+	'pkgconf'
+	'strace'
+	'valgrind'
+	'python-pip'
+	'nodejs'
+	'npm'
+	'go'
+	'shellcheck'
+)
+optdepends=(
+	'docker: Docker container engine'
+	'podman: daemonless container engine'
+)
+options=('!debug')
+source=(
+	"${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/v${pkgver}.tar.gz"
+)
+sha256sums=()
+
+# shellcheck disable=SC1091
+_functions_file="${startdir:-$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)}/../common/functions.sh"
+. "$_functions_file"
+
+prepare() {
+	arch_normalize_source_tree
+}
+
+check() {
+	arch_check_metapackage
+}
+
+package() {
+	arch_package_metapackage
+}
