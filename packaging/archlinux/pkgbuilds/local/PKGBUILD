@@ -23,6 +23,7 @@ depends=(
 	'btop'
 	'shadow'
 	'jq'
+    'mise'
 	'curl'
 	'wget'
 	'openssh'

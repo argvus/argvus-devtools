@@ -24,6 +24,7 @@ depends=(
 	'jq'
 	'shadow'
 	'curl'
+    'mise'
 	'wget'
 	'openssh'
 	'pam'
