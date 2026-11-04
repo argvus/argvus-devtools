@@ -25,6 +25,7 @@ depends=(
 	'shadow'
 	'curl'
     'mise'
+    'micro'
     'ncdu'
 	'wget'
 	'openssh'
